@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CCHBDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The End!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97n-Ed-t9j">
+                                <rect key="frame" x="147" y="415" width="120.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackHole" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-Io-qlD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMN-eM-kic">
+                                <rect key="frame" x="28.5" y="808" width="357" height="30"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sZw-Q4-7LF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="This little maneuver is going to cost us 51 years">
+                                    <color key="titleColor" red="1" green="0.80784313730000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleBlackHoleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q1J-Tg-kI3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ehn-Io-qlD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7ZO-no-uaU"/>
+                            <constraint firstAttribute="bottom" secondItem="ehn-Io-qlD" secondAttribute="bottom" id="DRb-rz-CiC"/>
+                            <constraint firstItem="FMN-eM-kic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GXC-Ww-Whq"/>
+                            <constraint firstAttribute="trailing" secondItem="ehn-Io-qlD" secondAttribute="trailing" id="JXf-yD-n7L"/>
+                            <constraint firstItem="ehn-Io-qlD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NJu-nI-KK2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FMN-eM-kic" secondAttribute="bottom" constant="24" id="awn-be-Afg"/>
+                            <constraint firstItem="97n-Ed-t9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hnr-cl-gF1"/>
+                            <constraint firstItem="97n-Ed-t9j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-15" id="rMJ-EB-uHJ"/>
+                            <constraint firstItem="FMN-eM-kic" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tFh-8g-7aa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blackHoleButton" destination="FMN-eM-kic" id="l64-XD-ftz"/>
+                        <outlet property="blackHoleImageView" destination="ehn-Io-qlD" id="CIj-i2-UbO"/>
+                        <outlet property="theEndLabel" destination="97n-Ed-t9j" id="Lh5-0l-aMi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.1449275362319" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blackHole" width="730" height="1080"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
