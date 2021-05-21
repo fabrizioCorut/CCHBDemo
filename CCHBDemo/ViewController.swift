@@ -17,6 +17,7 @@ extension ViewController: BalloonSpotDelegate {
 
 		// Add it to the gravity field so it will give the impression of "flying away"
 		gravity.addItem(balloon)
+		collision.addItem(balloon)
 	}
 }
 
@@ -37,6 +38,14 @@ final class ViewController: UIViewController {
 		let behavior: UIGravityBehavior = .init()
 		behavior.gravityDirection = .init(dx: 0.0, dy: -0.4)
 		animator.addBehavior(behavior)
+		return behavior
+	}()
+
+	/// Blocks the balloon from exiting the bounds.
+	private lazy var collision: UICollisionBehavior = {
+		let behavior: UICollisionBehavior = .init()
+		animator.addBehavior(behavior)
+		behavior.translatesReferenceBoundsIntoBoundary = true
 		return behavior
 	}()
 
@@ -154,7 +163,7 @@ final class ViewController: UIViewController {
 		while changedIndexes.count != size {
 			// Make sure to create a unique index every time;
 			var newIndex = firstIndex
-			while changedIndexes.contains(newIndex) || changedIndexes.count == newIndex {
+			while changedIndexes.contains(newIndex) {
 				newIndex = Int.random(in: 0..<size)
 			}
 			changedIndexes.append(newIndex)
